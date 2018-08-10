@@ -1,10 +1,12 @@
-<?php Monolith\RelationalDatabase;
+<?php use Monolith\RelationalDatabase\Query;
+
+Monolith\RelationalDatabase;
 
 class RelationalDatabaseBootstrap implements \Monolith\ComponentLoading\ComponentBootstrap {
 
     public function bind(\Monolith\DependencyInjection\Container $container): void {
-        $container->bind(PDO::class, function() {
-            return new PDO(get_env('RELATIONAL_DATABASE_DSN'));
+        $container->bind(Query::class, function() {
+            return new Query(get_env('RELATIONAL_DATABASE_DSN'));
         });
     }
 
