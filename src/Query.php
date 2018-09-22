@@ -1,6 +1,6 @@
 <?php namespace Monolith\RelationalDatabase;
 
-class Query {
+final class Query {
 
     /** @var PDO */
     private $pdo;

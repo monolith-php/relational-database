@@ -1,3 +1,3 @@
-# Relational Database
+# Relational Database $$VERSION$$
 
 basic info
