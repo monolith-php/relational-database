@@ -1,0 +1,6 @@
+suites:
+  main:
+    namespace: "Monolith\\RelationalDatabase"
+    psr4_prefix: "Monolith\\RelationalDatabase"
+    src_path: src
+formatter.name: pretty

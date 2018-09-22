@@ -19,13 +19,25 @@
     "php": "^7.1",
     "vlucas/phpdotenv": "^2.5@dev"
   },
+  "require-dev": {
+    "phpspec/phpspec": "^5.0"
+  },
   "autoload": {
     "psr-4": {
       "Monolith\\RelationalDatabase\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\Monolith\\RelationalDatabase\\": "spec/"
+    },
+    "files": [
+      "spec/functions.php"
+    ]
+  },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "bin-dir": "bin"
   },
   "minimum-stability": "dev"
 }
