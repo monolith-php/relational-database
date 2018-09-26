@@ -2,7 +2,7 @@
 
 Monolith\RelationalDatabase;
 
-final class RelationalDatabaseBootstrap implements \Monolith\ComponentLoading\ComponentBootstrap {
+final class RelationalDatabaseBootstrap implements \Monolith\ComponentBootstrapping\ComponentBootstrap {
 
     public function bind(\Monolith\DependencyInjection\Container $container): void {
 
