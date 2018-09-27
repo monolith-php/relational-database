@@ -11,7 +11,7 @@ final class Query
     public function __construct($dsn, $username, $password)
     {
         $this->pdo = new PDO($dsn, $username, $password);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, PDO::FETCH_OBJ);
     }
 
     public function write($query, array $placeholders = []): void
