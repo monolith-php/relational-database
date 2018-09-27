@@ -26,17 +26,17 @@ class DbSpec extends ObjectBehavior
 
         $this->write($create);
 
-        $result = $this->readOne($show);
+        $result = $this->readFirst($show);
         $result->Tables_in_development->shouldBe('example');
 
         $this->write($drop);
 
-        $result = $this->readOne($show);
+        $result = $this->readFirst($show);
         $result->shouldBe(false);
     }
 
     function it_should_throw_on_queries_lacking_parameters()
     {
-        $this->shouldThrow(CanNotExecuteQuery::class)->during('read', ['select * from :table']);
+        $this->shouldThrow(CanNotExecuteQuery::class)->during('readFirst', ['select * from :table']);
     }
 }

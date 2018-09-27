@@ -2,7 +2,7 @@
 
 use PDO;
 
-final class Db
+class Db
 {
     /** @var PDO */
     private $pdo;
@@ -24,7 +24,7 @@ final class Db
         }
     }
 
-    public function readOne($query, array $placeholders = [])
+    public function readFirst($query, array $placeholders = [])
     {
         $statement = $this->pdo->prepare($query);
 
@@ -37,7 +37,7 @@ final class Db
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function read($query, array $placeholders = [])
+    public function readAll($query, array $placeholders = [])
     {
         $statement = $this->pdo->prepare($query);
 
