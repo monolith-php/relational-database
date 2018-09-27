@@ -2,9 +2,8 @@
 
 use PDO;
 
-final class Query
+final class Db
 {
-
     /** @var PDO */
     private $pdo;
 

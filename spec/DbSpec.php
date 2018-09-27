@@ -1,10 +1,10 @@
 <?php namespace spec\Monolith\RelationalDatabase;
 
 use Monolith\RelationalDatabase\CanNotExecuteQuery;
-use Monolith\RelationalDatabase\Query;
+use Monolith\RelationalDatabase\Db;
 use PhpSpec\ObjectBehavior;
 
-class QuerySpec extends ObjectBehavior
+class DbSpec extends ObjectBehavior
 {
 
     function let()
@@ -15,7 +15,7 @@ class QuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(Query::class);
+        $this->shouldHaveType(Db::class);
     }
 
     function it_can_query()
@@ -26,12 +26,12 @@ class QuerySpec extends ObjectBehavior
 
         $this->write($create);
 
-        $result = $this->read($show);
-        $result[0]->shouldBe('example');
+        $result = $this->readOne($show);
+        $result->Tables_in_development->shouldBe('example');
 
         $this->write($drop);
 
-        $result = $this->read($show);
+        $result = $this->readOne($show);
         $result->shouldBe(false);
     }
 
