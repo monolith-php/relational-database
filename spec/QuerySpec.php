@@ -1,5 +1,6 @@
 <?php namespace spec\Monolith\RelationalDatabase;
 
+use Monolith\RelationalDatabase\CanNotExecuteQuery;
 use Monolith\RelationalDatabase\Query;
 use PhpSpec\ObjectBehavior;
 
@@ -9,6 +10,7 @@ class QuerySpec extends ObjectBehavior
     function let()
     {
         $this->beConstructedWith('mysql:host=localhost;dbname=development', 'root', 'password');
+        $this->write('drop table if exists example');
     }
 
     function it_is_initializable()
@@ -22,14 +24,19 @@ class QuerySpec extends ObjectBehavior
         $show = 'show tables;';
         $drop = 'drop table example;';
 
-        $this->execute($create);
+        $this->write($create);
 
-        $result = $this->execute($show);
+        $result = $this->read($show);
         $result[0]->shouldBe('example');
 
-        $this->execute($drop);
-        
-        $result = $this->execute($show);
+        $this->write($drop);
+
+        $result = $this->read($show);
         $result->shouldBe(false);
+    }
+
+    function it_should_throw_on_queries_lacking_parameters()
+    {
+        $this->shouldThrow(CanNotExecuteQuery::class)->during('read', ['select * from :table']);
     }
 }
