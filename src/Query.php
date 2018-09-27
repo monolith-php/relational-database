@@ -25,7 +25,7 @@ final class Query
         }
     }
 
-    public function read($query, array $placeholders = [])
+    public function readOne($query, array $placeholders = [])
     {
         $statement = $this->pdo->prepare($query);
 
@@ -36,5 +36,18 @@ final class Query
         }
 
         return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function read($query, array $placeholders = [])
+    {
+        $statement = $this->pdo->prepare($query);
+
+        try {
+            $statement->execute($placeholders);
+        } catch (\PDOException $e) {
+            throw new CanNotExecuteQuery($e->getMessage());
+        }
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 }
