@@ -9,8 +9,16 @@ class Db
 
     public function __construct($dsn, $username, $password)
     {
-        $this->pdo = new PDO($dsn, $username, $password);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $this->pdo = new PDO($dsn, $username, $password);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (\PDOException $e) {
+            $message = $e->getMessage() == "invalid data source name"
+                ? "Could not parse data source name '{$dsn}'."
+                : $e->getMessage();
+
+            throw new CouldNotConnectWithPdo($message);
+        }
     }
 
     public function write($query, array $placeholders = []): void

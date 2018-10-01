@@ -13,7 +13,8 @@
   ],
   "require": {
     "php": "^7.1",
-    "vlucas/phpdotenv": "^2.5@dev"
+    "vlucas/phpdotenv": "^2.5@dev",
+    "monolith/dependency-injection": "^5"
   },
   "require-dev": {
     "phpspec/phpspec": "^5.0"
