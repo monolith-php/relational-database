@@ -7,9 +7,11 @@ use PhpSpec\ObjectBehavior;
 
 class DbSpec extends ObjectBehavior
 {
-    function init() {
+    function init()
+    {
         $this->beConstructedWith('mysql:host=localhost;dbname=development', 'root', 'password');
         $this->write('drop table if exists example');
+        $this->createTable();
     }
 
     function it_is_initializable()
@@ -22,19 +24,9 @@ class DbSpec extends ObjectBehavior
     function it_can_query()
     {
         $this->init();
-        $create = 'create table example(example_id int);';
-        $show = 'show tables;';
-        $drop = 'drop table example;';
 
-        $this->write($create);
-
-        $result = $this->readFirst($show);
-        $result->Tables_in_development->shouldBe('example');
-
-        $this->write($drop);
-
-        $result = $this->readFirst($show);
-        $result->shouldBe(false);
+        $this->writeToTable(1);
+        $this->verifyIntExists(1);
     }
 
     function it_should_throw_on_queries_lacking_parameters()
@@ -47,5 +39,62 @@ class DbSpec extends ObjectBehavior
     {
         $this->beConstructedWith('unparsable', 'root', 'password');
         $this->shouldThrow(CouldNotConnectWithPdo::class)->duringInstantiation();
+    }
+
+    function it_can_commit_transactions()
+    {
+        $this->init();
+
+        $this->beginTransaction();
+
+        $this->writeToTable(1);
+        $this->verifyIntExists(1);
+
+        $this->commitTransaction();
+
+        $this->verifyIntExists(1);
+    }
+
+    function it_can_roll_back_commits()
+    {
+        $this->init();
+
+        $this->beginTransaction();
+
+        $this->writeToTable(1);
+        $this->verifyIntExists(1);
+
+        $this->rollbackTransaction();
+
+        $this->verifyIntDoesntExist(1);
+    }
+
+    private function createTable(): void
+    {
+        $this->write('create table example(example_id int);');
+    }
+
+    private function writeToTable(int $int): void
+    {
+        $this->write('insert into example (example_id) values (:int)', [
+            'int' => $int,
+        ]);
+    }
+
+    private function verifyIntExists(int $int): void
+    {
+        $result = $this->readFirst('select * from example where example_id = :int', [
+            'int' => $int
+        ]);
+        $result->example_id->shouldBe((string) $int);
+    }
+
+    private function verifyIntDoesntExist(int $int): void
+    {
+        $result = $this->readFirst('select * from example where example_id = :int', [
+            'int' => $int
+        ]);
+
+        $result->shouldBe(false);
     }
 }

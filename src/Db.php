@@ -21,6 +21,21 @@ class Db
         }
     }
 
+    public function beginTransaction(): void
+    {
+        $this->pdo->beginTransaction();
+    }
+
+    public function commitTransaction(): void
+    {
+        $this->pdo->commit();
+    }
+
+    public function rollbackTransaction(): void
+    {
+        $this->pdo->rollBack();
+    }
+
     public function write($query, array $placeholders = []): void
     {
         $statement = $this->pdo->prepare($query);
