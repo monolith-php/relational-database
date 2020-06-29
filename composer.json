@@ -14,7 +14,8 @@
   "require": {
     "php": "^7.4",
     "monolith/dependency-injection": "^8",
-    "monolith/configuration": "^6"
+    "monolith/configuration": "^6",
+    "ext-pdo": "*"
   },
   "require-dev": {
     "phpspec/phpspec": "dev-master"
