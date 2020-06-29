@@ -13,7 +13,7 @@ class Db
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            $message = $e->getMessage() == "invalid data source name"
+            $message = $e->getMessage() == "The provided DSN configuration is invalid. DSN: '{$dsn}'. This is typically "
                 ? "Could not parse data source name '{$dsn}'."
                 : $e->getMessage();
 
