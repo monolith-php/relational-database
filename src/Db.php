@@ -13,11 +13,7 @@ class Db
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            $message = $e->getMessage() == "The provided DSN configuration '{$dsn}' is invalid. This is typically defined in your .env file."
-                ? "Could not parse DSN '{$dsn}'. This is typically defined in your .env file."
-                : $e->getMessage();
-
-            throw new CouldNotConnectWithPdo($message);
+            throw new CouldNotConnectWithPdo("The provided DSN configuration '{$dsn}' is invalid. This is typically defined in your .env file.");
         }
     }
 
