@@ -39,7 +39,7 @@ class Db
         try {
             $statement->execute($placeholders);
         } catch (\PDOException $e) {
-            throw new CanNotExecuteQuery("Can not execute database query: $e->getMessage()");
+            throw new CanNotExecuteQuery("Can not execute database query: " . $e->getMessage());
         }
     }
 
