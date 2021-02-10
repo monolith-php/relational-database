@@ -6,14 +6,24 @@
     "http"
   ],
   "require": {
-    "php": ">=7.4",
-    "monolith/dependency-injection": "^8",
-    "monolith/configuration": "^6",
+    "php": ">=8",
+    "monolith/dependency-injection": "^9",
+    "monolith/configuration": "^7",
     "ext-pdo": "*"
   },
   "require-dev": {
-    "phpspec/phpspec": "dev-master"
+    "phpspec/phpspec": "^7"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.humanmusic.eu",
+      "canonical": false,
+      "only": [
+        "monolith/*"
+      ]
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Monolith\\RelationalDatabase\\": "src/"
