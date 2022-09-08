@@ -14,16 +14,6 @@
   "require-dev": {
     "phpspec/phpspec": "^7"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.humanmusic.eu",
-      "canonical": false,
-      "only": [
-        "monolith/*"
-      ]
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Monolith\\RelationalDatabase\\": "src/"

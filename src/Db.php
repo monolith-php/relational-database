@@ -13,7 +13,7 @@ class Db
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            throw new CouldNotConnectWithPdo("The provided DSN configuration '{$dsn}' is invalid. This is typically defined in your .env file.");
+            throw new CouldNotConnectWithPdo($e->getMesage());
         }
     }
 
@@ -67,5 +67,15 @@ class Db
         }
 
         return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function setPdoAttribute($attribute, $value): void
+    {
+        $this->pdo->setAttribute($attribute, $value);
+    }
+
+    public function getPdoAttribute($attribute): mixed
+    {
+        return $this->pdo->getAttribute($attribute);
     }
 }

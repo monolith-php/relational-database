@@ -69,6 +69,13 @@ class DbSpec extends ObjectBehavior
         $this->verifyIntDoesntExist(1);
     }
 
+    private function it_can_set_pdo_attributes()
+    {
+        $this->init();
+        
+        $this->getPdoAttribute(PDO::ATTR_STRINGIFY_FETCHES)->shouldBe(false);
+    }
+
     private function createTable(): void
     {
         $this->write('create table example(example_id int);');
