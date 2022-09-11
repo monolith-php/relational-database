@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60ac12d8adc2996e1652331fe315106e",
+    "content-hash": "2d73fbf744b78c50537513579ce037c6",
     "packages": [
         {
             "name": "monolith/collections",
-            "version": "9.8",
+            "version": "10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolith-php/collections.git",
-                "reference": "2eb6998f7ec537de622a051c888e0030d09d43bc"
+                "reference": "9ca739a836ce48101219e461eb9663fe1fb53c79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolith-php/collections/zipball/2eb6998f7ec537de622a051c888e0030d09d43bc",
-                "reference": "2eb6998f7ec537de622a051c888e0030d09d43bc",
+                "url": "https://api.github.com/repos/monolith-php/collections/zipball/9ca739a836ce48101219e461eb9663fe1fb53c79",
+                "reference": "9ca739a836ce48101219e461eb9663fe1fb53c79",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8"
+                "php": ">=8.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "^7"
@@ -40,28 +40,28 @@
             ],
             "support": {
                 "issues": "https://github.com/monolith-php/collections/issues",
-                "source": "https://github.com/monolith-php/collections/tree/9.8"
+                "source": "https://github.com/monolith-php/collections/tree/10.0"
             },
-            "time": "2022-09-07T16:05:49+00:00"
+            "time": "2022-09-11T15:07:45+00:00"
         },
         {
             "name": "monolith/component-bootstrapping",
-            "version": "8.0",
+            "version": "9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolith-php/component-bootstrapping.git",
-                "reference": "f5339055fb5c0ec7306344f5c1f71cb86db679da"
+                "reference": "4f69f9e6baf64dbbfe7cd70c99affb5b749c43ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolith-php/component-bootstrapping/zipball/f5339055fb5c0ec7306344f5c1f71cb86db679da",
-                "reference": "f5339055fb5c0ec7306344f5c1f71cb86db679da",
+                "url": "https://api.github.com/repos/monolith-php/component-bootstrapping/zipball/4f69f9e6baf64dbbfe7cd70c99affb5b749c43ed",
+                "reference": "4f69f9e6baf64dbbfe7cd70c99affb5b749c43ed",
                 "shasum": ""
             },
             "require": {
-                "monolith/collections": "^9",
-                "monolith/dependency-injection": "^9",
-                "php": ">=8"
+                "monolith/collections": "^10",
+                "monolith/dependency-injection": "^10",
+                "php": ">=8.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "^7"
@@ -80,27 +80,28 @@
             ],
             "support": {
                 "issues": "https://github.com/monolith-php/component-bootstrapping/issues",
-                "source": "https://github.com/monolith-php/component-bootstrapping/tree/8.0"
+                "source": "https://github.com/monolith-php/component-bootstrapping/tree/9.0"
             },
-            "time": "2021-02-10T19:23:32+00:00"
+            "time": "2022-09-11T15:13:35+00:00"
         },
         {
             "name": "monolith/configuration",
-            "version": "7.3",
+            "version": "8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolith-php/configuration.git",
-                "reference": "afc2d905bd1ea090386a7547632d901a4932c809"
+                "reference": "5ce39a2972833cbbab1c603c12041cd26e65f05e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolith-php/configuration/zipball/afc2d905bd1ea090386a7547632d901a4932c809",
-                "reference": "afc2d905bd1ea090386a7547632d901a4932c809",
+                "url": "https://api.github.com/repos/monolith-php/configuration/zipball/5ce39a2972833cbbab1c603c12041cd26e65f05e",
+                "reference": "5ce39a2972833cbbab1c603c12041cd26e65f05e",
                 "shasum": ""
             },
             "require": {
-                "monolith/component-bootstrapping": "^8",
-                "php": ">=8"
+                "monolith/collections": "^10",
+                "monolith/component-bootstrapping": "^9",
+                "php": ">=8.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.3@dev"
@@ -119,27 +120,27 @@
             ],
             "support": {
                 "issues": "https://github.com/monolith-php/configuration/issues",
-                "source": "https://github.com/monolith-php/configuration/tree/7.3"
+                "source": "https://github.com/monolith-php/configuration/tree/8.0"
             },
-            "time": "2022-09-06T19:43:59+00:00"
+            "time": "2022-09-11T15:15:44+00:00"
         },
         {
             "name": "monolith/dependency-injection",
-            "version": "9.3",
+            "version": "10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolith-php/dependency-injection.git",
-                "reference": "e84f2bd7679875c83bfd3af35cc275fca6e1a1dd"
+                "reference": "cfcc052e40dfe6ac377c945e8aca2de4912c75e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolith-php/dependency-injection/zipball/e84f2bd7679875c83bfd3af35cc275fca6e1a1dd",
-                "reference": "e84f2bd7679875c83bfd3af35cc275fca6e1a1dd",
+                "url": "https://api.github.com/repos/monolith-php/dependency-injection/zipball/cfcc052e40dfe6ac377c945e8aca2de4912c75e2",
+                "reference": "cfcc052e40dfe6ac377c945e8aca2de4912c75e2",
                 "shasum": ""
             },
             "require": {
-                "monolith/collections": "^9",
-                "php": ">=8",
+                "monolith/collections": "^10",
+                "php": ">=8.1",
                 "psr/container": "^1"
             },
             "require-dev": {
@@ -160,9 +161,9 @@
             ],
             "support": {
                 "issues": "https://github.com/monolith-php/dependency-injection/issues",
-                "source": "https://github.com/monolith-php/dependency-injection/tree/9.3"
+                "source": "https://github.com/monolith-php/dependency-injection/tree/10.0"
             },
-            "time": "2021-03-04T11:01:16+00:00"
+            "time": "2022-09-11T15:12:34+00:00"
         },
         {
             "name": "psr/container",
@@ -2082,7 +2083,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8",
+        "php": ">=8.1",
         "ext-pdo": "*"
     },
     "platform-dev": [],
