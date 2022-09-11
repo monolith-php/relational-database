@@ -126,16 +126,16 @@
         },
         {
             "name": "monolith/dependency-injection",
-            "version": "10.0",
+            "version": "10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolith-php/dependency-injection.git",
-                "reference": "cfcc052e40dfe6ac377c945e8aca2de4912c75e2"
+                "reference": "59e05a4251c10d3b3706e9e3cc6ea14247cd2dff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolith-php/dependency-injection/zipball/cfcc052e40dfe6ac377c945e8aca2de4912c75e2",
-                "reference": "cfcc052e40dfe6ac377c945e8aca2de4912c75e2",
+                "url": "https://api.github.com/repos/monolith-php/dependency-injection/zipball/59e05a4251c10d3b3706e9e3cc6ea14247cd2dff",
+                "reference": "59e05a4251c10d3b3706e9e3cc6ea14247cd2dff",
                 "shasum": ""
             },
             "require": {
@@ -161,9 +161,9 @@
             ],
             "support": {
                 "issues": "https://github.com/monolith-php/dependency-injection/issues",
-                "source": "https://github.com/monolith-php/dependency-injection/tree/10.0"
+                "source": "https://github.com/monolith-php/dependency-injection/tree/10.1"
             },
-            "time": "2022-09-11T15:12:34+00:00"
+            "time": "2022-09-11T15:33:34+00:00"
         },
         {
             "name": "psr/container",

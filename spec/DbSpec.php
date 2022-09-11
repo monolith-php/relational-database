@@ -1,5 +1,6 @@
 <?php namespace spec\Monolith\RelationalDatabase;
 
+use PDO;
 use Monolith\RelationalDatabase\CanNotExecuteQuery;
 use Monolith\RelationalDatabase\CouldNotConnectWithPdo;
 use Monolith\RelationalDatabase\Db;
@@ -10,6 +11,7 @@ class DbSpec extends ObjectBehavior
     function init()
     {
         $this->beConstructedWith('mysql:host=localhost;dbname=development', 'root', 'password');
+        $this->setPdoAttribute(PDO::ATTR_STRINGIFY_FETCHES, true);
         $this->write('drop table if exists example');
         $this->createTable();
     }

@@ -13,7 +13,7 @@ class Db
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            throw new CouldNotConnectWithPdo($e->getMesage());
+            throw new CouldNotConnectWithPdo($e->getMessage());
         }
     }
 
